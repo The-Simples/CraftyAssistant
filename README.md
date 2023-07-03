@@ -6,6 +6,7 @@ More info will be provided in the furture, for now, you can invite it just use h
 - Server query
 - [Spark](https://github.com/lucko/spark) Analyser
 - Search Minecraft user
-  
-- [x] Search mappings
-- [x] More ideas
+
+# Todo
+- [ ] Search mappings
+- [ ] More ideas
