@@ -1,8 +1,12 @@
-# ⚔️ Slshx Starter Template
+# CraftyAssistant
 
-This is the starter template for **Slshx**, a library for building strongly-typed
-[Discord commands](https://discord.com/developers/docs/interactions/application-commands)
-that run on [Cloudflare Workers](https://workers.cloudflare.com/), using a
-React-inspired syntax.
+More info will be provided in the furture, for now, you can invite it just use https://discord.com/api/oauth2/authorize?client_id=1122729387587018806&permissions=277025392640&scope=bot%20applications.commands
 
-See the [Slshx repository](https://github.com/mrbbot/slshx) for setup instructions.
+- Search Modrinth/~~CurseForge~~(API requried, but I don't have one) projects
+- Server query
+- [Spark](https://github.com/lucko/spark) Analyser
+- Search Minecraft user
+
+# Todo
+- [ ] Search mappings
+- [ ] More ideas
