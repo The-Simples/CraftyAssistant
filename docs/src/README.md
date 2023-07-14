@@ -65,7 +65,7 @@ highlights:
 		
       - title: /mcuser
         icon: idcard
-        details: Want to see someone else's UUID or get someone else's head? Not only that, but we'll also help you render the skin
+        details: Want to see someone else's UUID or get someone else's in-game head? Not only that, but we'll also help you render the skin
         link: /guide/mcuser
 
 copyright: false

@@ -10,7 +10,7 @@ export default hopeTheme({
 
   repo: "The-Simples/CraftyAssistant",
 
-  docsDir: "src",
+  docsDir: "docs/src",
 
   locales: {
     "/": {
