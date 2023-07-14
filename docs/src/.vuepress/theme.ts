@@ -9,7 +9,7 @@ export default hopeTheme({
   logo: "/logo.svg",
 
   repo: "The-Simples/CraftyAssistant",
-
+  docsBranch: "master",
   docsDir: "docs/src",
 
   locales: {
