@@ -5,7 +5,7 @@
   "module": "dist/index.mjs",
   "private": true,
   "scripts": {
-    "dev": "miniflare --watch --debug --wrangler-env=development --kv CHECK_CONF",
+    "dev": "miniflare --watch --debug --wrangler-env=development",
     "deploy:global": "node --no-warnings --experimental-vm-modules scripts/deploy.js",
     "update-kv": "node scripts/update-kv.js"
   },

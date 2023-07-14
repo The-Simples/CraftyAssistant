@@ -48,7 +48,7 @@ export function spark(): CommandHandler<Env> {
 
   return async (interaction, env, ctx) => {
     if (!url.startsWith('https://spark'))
-      return <Message ephemeral> Oh! </Message>
+      return <Message ephemeral>Not a spark url.</Message>
     const response_raw = await fetch(url + '?raw=1')
     const sampler: any = await response_raw.json()
     if (!sampler) return <Message ephemeral>Failed to get data</Message>
@@ -66,7 +66,9 @@ export function spark(): CommandHandler<Env> {
     const versionString = sampler.metadata.systemStatistics.java.vendorVersion
     const majorVersion = parseInt(versionString.split('.')[0], 10)
 
-    fields.push(gcChecker(flags, isServer, majorVersion))
+    gcChecker(flags, isServer, majorVersion).then((field) =>
+      fields.unshift(field)
+    )
 
     let variablesMap = {
       ...(configs['server.properties']
@@ -160,7 +162,7 @@ function errorField(node: string, error: unknown) {
   return { name: ':warning:' + node, value: String(error), inline: true }
 }
 
-function gcChecker(
+async function gcChecker(
   jvmFlagsString: string,
   isServer: boolean,
   jvmVersion: number

@@ -5,9 +5,7 @@ import {
   useString,
   Message,
   useBoolean,
-  Choice,
   Embed,
-  useNameLocalizations,
   useDescriptionLocalizations,
 } from 'slshx'
 import * as mcapi from './api'
@@ -47,11 +45,15 @@ export function mcuser(): CommandHandler<Env> {
   })
 
   return async () => {
-    const user = await mcapi.getUser(name)
-    if (!user) return <Message ephemeral> No such user </Message>
+    let user
+    try {
+      user = await mcapi.getUser(name)
+    } catch (e) {
+      return <Message ephemeral> {e} </Message>
+    }
     const view = mcapi.renderView(user)
     return (
-      <Message>
+      <Message ephemeral={!!silent}>
         <Embed
           color={0x0094ff}
           thumbnail={view.skinView}

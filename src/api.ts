@@ -1,18 +1,17 @@
 const servers = 'https://sr-api.sfirew.com/server',
   render = 'https://visage.surgeplay.com',
-  mojang = 'https://api.mojang.com'
+  mojang = 'https://api.minecraftservices.com'
 
 export interface MCUser {
   id: string
   name: string
 }
 export async function getUser(username: string): Promise<MCUser> {
-  const data = await fetch(`${mojang}/users/profiles/minecraft/${username}`)
-    .then((res) => res.json<MCUser>())
-    .catch((e) => {
-      throw e
-    })
-  return data
+  const data = await fetch(
+    `${mojang}/minecraft/profile/lookup/name/${username}`
+  )
+  if (!data.ok) throw new TypeError('Getting user failed.')
+  return await data.json()
 }
 
 export function renderView(user: MCUser) {

@@ -3,11 +3,15 @@ import YAML from 'yaml'
 import { env } from './env.js'
 import path from 'path'
 import { fileURLToPath } from 'url'
-;(async () => {
-  const accountId = env.kv.accountId
-  const namespaceId = env.kv.namespaceId
-  const apiToken = env.kv.apiToken
 
+const accountId = env.kv.accountId
+const namespaceId = env.kv.namespaceId
+const apiToken = env.kv.apiToken
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+writeConf().catch((e) => console.log(e))
+async function writeConf() {
   const files = {
     plugins: {
       paper: './analysis_config/plugins/paper.yml',
@@ -21,6 +25,31 @@ import { fileURLToPath } from 'url'
       purpur: './analysis_config/purpur.yml',
     },
   }
+  fetch('https://api.modrinth.com/v2/tag/game_version').then(async (res) => {
+    const kvKey = 'versions'
+    const generatePath = path.resolve(
+      __dirname,
+      '..',
+      'data',
+      'CHECK_CONF',
+      kvKey
+    )
+    const versions = await res.json()
+    let choices = []
+    const matching = versions.filter((v) => v.version_type === 'release')
+    for (const v of matching) {
+      choices.push(v.version)
+    }
+    choices = JSON.stringify(choices)
+    fs.writeFile(generatePath, choices, (err) => {
+      if (err) {
+        console.error('Failed to write file:', err)
+      } else {
+        console.log(`File written successfully at ${generatePath}`)
+      }
+    })
+    await putToKV(kvKey, choices)
+  })
 
   for (const category in files) {
     for (const key in files[category]) {
@@ -31,8 +60,6 @@ import { fileURLToPath } from 'url'
       const yamlData = JSON.stringify(YAML.parse(fileContent))
       const kvKey = `${category}.${key}`
 
-      const __filename = fileURLToPath(import.meta.url)
-      const __dirname = path.dirname(__filename)
       const generatePath = path.resolve(
         __dirname,
         '..',
@@ -44,24 +71,29 @@ import { fileURLToPath } from 'url'
         if (err) {
           console.error('Failed to write file:', err)
         } else {
-          console.log(`File written successfully at ${filePath}`)
+          console.log(`File written successfully at ${generatePath}`)
         }
       })
-
-      if (apiToken) {
-        const url = `https://api.cloudflare.com/client/v4/accounts/${accountId}/storage/kv/namespaces/${namespaceId}/values/${kvKey}`
-
-        const response = await fetch(url, {
-          method: 'PUT',
-          headers: {
-            Authorization: `Bearer ${apiToken}`,
-            'Content-Type': 'application/json',
-          },
-          body: yamlData,
-        })
-
-        console.log(await response.json())
-      }
+      await putToKV(kvKey, yamlData)
     }
   }
-})()
+}
+
+async function putToKV(kvKey, kvValue) {
+  if (!apiToken) {
+    console.log('Needed API')
+    return
+  }
+  const url = `https://api.cloudflare.com/client/v4/accounts/${accountId}/storage/kv/namespaces/${namespaceId}/values/${kvKey}`
+
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${apiToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: kvValue,
+  })
+
+  console.log(await response.json())
+}

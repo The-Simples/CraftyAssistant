@@ -6,6 +6,7 @@ import { mcuser } from './mcuser'
 import { mcflags } from './mcflags'
 import { spark } from './spark'
 import { mcserver } from './mcserver'
+import { mappings } from './mappings'
 
 const handler = createHandler({
   // Replaced by esbuild when bundling, see scripts/build.js (do not edit)
@@ -14,7 +15,16 @@ const handler = createHandler({
   applicationSecret: SLSHX_APPLICATION_SECRET,
   testServerId: SLSHX_TEST_SERVER_ID,
   // Add your commands here
-  commands: { add, modrinth, curseforge, mcuser, mcflags, mcserver, spark },
+  commands: {
+    add,
+    modrinth,
+    curseforge,
+    mcuser,
+    mcflags,
+    mcserver,
+    spark,
+    mappings,
+  },
 })
 
 export default { fetch: handler }

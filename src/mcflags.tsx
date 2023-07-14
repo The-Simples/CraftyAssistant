@@ -161,7 +161,7 @@ export function mcflags(): CommandHandler<Env> {
     }
 
     return (
-      <Message attachments={[file]} ephemeral={silent ? true : false}>
+      <Message attachments={[file]} ephemeral={!!silent}>
         Here's a file:
       </Message>
     )

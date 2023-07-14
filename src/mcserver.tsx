@@ -56,7 +56,7 @@ export function mcserver(): CommandHandler<Env> {
 
     if (!server) return <Message ephemeral> Query Failed </Message>
     return (
-      <Message>
+      <Message ephemeral={!!silent}>
         <Embed color={0x0094ff} image={server.banner}>
           Online Mode:{String(server.online)} Version: {server.version.name}{' '}
           {'\n'}

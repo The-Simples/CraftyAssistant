@@ -4,8 +4,10 @@ main = "./dist/index.mjs"
 workers_dev = true
 # route = ""
 kv_namespaces = [
-  { binding = "CHECK_CONF", id = "76361891f9814612a535aab20655b2a6" }
+  { binding = "CHECK_CONF", id = "76361891f9814612a535aab20655b2a6" },
+  { binding = "NMS_QUERY", id = "c780ae60170c4fcaa4bc40b693ad9729" }
 ]
+
 compatibility_date = "2022-08-07"
 compatibility_flags = []
 
@@ -21,6 +23,9 @@ main = "./index.mjs"
 [miniflare]
 kv_persist = "./data/"
 cache_persist = true
-durable_objects_persist = true
 global_async_io = true # Required by Slshx
 
+[[d1_databases]]
+binding = "NMS_INDEX"
+database_name = "nms_index"
+database_id = "a9388ba8-44c2-49fb-8282-6efae5c4f727"

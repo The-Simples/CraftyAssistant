@@ -1,20 +1,15 @@
 import {
+  Choice,
   CommandHandler,
-  useDescription,
-  useNumber,
   createElement,
-  useString,
   Message,
   useBoolean,
-  Choice,
-  useNameLocalizations,
+  useDescription,
   useDescriptionLocalizations,
+  useNumber,
+  useString,
 } from 'slshx'
-import {
-  ModrinthV2Client,
-  SearchProjectOptions,
-  SearchResult,
-} from '@xmcl/modrinth'
+import { ModrinthV2Client, SearchProjectOptions } from '@xmcl/modrinth'
 
 export interface Version {
   version: string
@@ -117,25 +112,18 @@ export function modrinth(): CommandHandler<Env> {
       },
     }
   )
-  const version = useString<Env>('version', 'Specify version', {
+  const version: string | null = useString<Env>('version', 'Specify version', {
     async autocomplete(interaction, env, ctx) {
-      const response = await fetch(
-        'https://api.modrinth.com/v2/tag/game_version'
+      if (!version || version.length <= 3)
+        return ['Waiting more input...'] as Choice<string>[]
+      const versions: string[] | null = await env.CHECK_CONF.get(
+        'versions',
+        'json'
       )
-      const choices: Choice<string>[] = []
-      if (!response.ok || !version) return choices
-      const versions: Version[] = await response.json()
-      const matching = versions.filter((v) => {
-        if (!v.version.startsWith(version)) return false
-        if (v.version_type !== 'release') return false
-        return true
+      if (!versions) return ['Failed to get all versions']
+      return versions.filter((v) => {
+        return v.startsWith(version)
       })
-      for (const v of matching) {
-        if (v.major)
-          choices.push({ name: v.version + ' (Major)', value: v.version })
-        else choices.push(v.version)
-      }
-      return choices
     },
   })
   const limit = useNumber('limit', 'Limit return number', {
@@ -183,7 +171,7 @@ export function modrinth(): CommandHandler<Env> {
     }
 
     let message: { embeds: any[] } = {
-      ...(silent ? { flags: 64 } : null), // ephemeral
+      ...(silent ? { flags: 64 } : {}), // ephemeral
       embeds: [],
     }
     for (const project of result.hits) {
