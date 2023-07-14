@@ -1,5 +1,6 @@
 <!--suppress HtmlDeprecatedAttribute -->
 <div align="center">
+  
 <!-- Shields -->
 [Homepage]:https://img.shields.io/badge/-Home_Page-blueviolet.svg?logo=StarTrek&style=for-the-badge&logoColor=white
 [Invite]:https://img.shields.io/badge/-Invite_Bot-5865F2.svg?logo=discord&style=for-the-badge&logoColor=white
@@ -9,6 +10,8 @@
 [![Invite]](https://discord.com/api/oauth2/authorize?client_id=1122729387587018806&permissions=277025392640&scope=bot%20applications.commands)
 [![Discord]](https://discord.gg/epx73XYzGj)
 </div>
+
+## CraftyAssistant
 Check the features [here](https://crafty-assistant.vercel.app/guide)
 - Search Modrinth/~~CurseForge~~(API requried, but I don't have one) projects
 - Server query
