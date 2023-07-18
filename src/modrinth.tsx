@@ -31,7 +31,7 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索关键词',
-        'pt-BR': 'palavra-chave',
+        'pt-BR': 'palavra',
       },
       description: {
         'zh-CN': '用于搜索的词语',

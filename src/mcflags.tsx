@@ -97,7 +97,7 @@ export function mcflags(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '是否自动重启',
-          'pt-BR': 'reinício-automático',
+          'pt-BR': 'autoreiniciar',
         },
       },
     }
@@ -107,7 +107,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '是否使用gui',
-        'pt-BR': 'GUI',
+        'pt-BR': 'gui',
       },
     },
   })
