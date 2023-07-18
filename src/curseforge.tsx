@@ -24,7 +24,7 @@ export function curseforge(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索关键词',
-        'pt-BR': 'A palavra usada para pesquisar',
+        'pt-BR': 'palavra-chave',
       },
       description: {
         'zh-CN': '用于搜索的词语',
@@ -43,6 +43,7 @@ export function curseforge(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索类型',
+        'pt-BR': 'tipo',
       },
       description: {
         'zh-CN': '指定搜索的类型',
@@ -95,7 +96,6 @@ export function curseforge(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '限制返回数',
-          'pt-BR': 'Limite o número de retornos para a pesquisa',
         },
         description: {
           'zh-CN': '限制搜索的返回数',
@@ -108,7 +108,6 @@ export function curseforge(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '仅你可见',
-        'pt-BR': 'Apenas você pode ver',
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',

@@ -23,7 +23,7 @@ export function mcuser(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索正版账号',
-        'pt-BR': 'O nome da conta Mojang',
+        'pt-BR': 'nome',
       },
       description: {
         'zh-CN': '用于搜索的词语',
@@ -38,7 +38,6 @@ export function mcuser(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '仅你可见',
-        'pt-BR': 'Apenas você pode ver',
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',

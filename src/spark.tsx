@@ -16,7 +16,6 @@ export function spark(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': 'spark报告',
-        'pt-BR': 'Relatório Spark',
       },
       description: {
         'zh-CN': '提供 Spark 报告 URL',
@@ -37,7 +36,6 @@ export function spark(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '公开扫描结果',
-        'pt-BR': 'Tornar o resultado da análise público.
       },
       description: {
         'zh-CN': '使扫描结果人人可见。',

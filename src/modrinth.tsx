@@ -31,7 +31,7 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索关键词',
-        'pt-BR': 'A palavra usada para pesquisar',
+        'pt-BR': 'palavra-chave',
       },
       description: {
         'zh-CN': '用于搜索的词语',
@@ -51,7 +51,7 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索类型',
-        'pt-BR': 'Tipo de pesquisa',
+        'pt-BR': 'tipo',
       },
       description: {
         'zh-CN': '指定搜索的类型',
@@ -108,7 +108,7 @@ export function modrinth(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '筛选光影或插件类型',
-          'pt-BR': 'Filtrar tipo de shader ou plugin',
+          'pt-BR': 'tipo',
         },
         description: {
           'zh-CN': '只在指定搜索类型以后才允许使用',
@@ -135,7 +135,6 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '限制返回数',
-        'pt-BR': 'Limitar número de resultados',
       },
       description: {
         'zh-CN': '限制搜索的返回数',
@@ -147,7 +146,6 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '仅你可见',
-        'pt-BR': 'Apenas você pode ver',
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',
