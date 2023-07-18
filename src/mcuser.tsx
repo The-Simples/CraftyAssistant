@@ -15,6 +15,7 @@ export function mcuser(): CommandHandler<Env> {
   useDescription('Lookup a MoJang Account')
   useDescriptionLocalizations({
     'zh-CN': '查找一个MC正版用户',
+    'pt-BR': 'Pesquise uma conta Minecraft',
   })
 
   const name = useString('mojang', 'The name of MoJang account', {
@@ -22,6 +23,7 @@ export function mcuser(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索正版账号',
+        'pt-BR': 'O nome da conta Mojang',
       },
       description: {
         'zh-CN': '用于搜索的词语',
@@ -36,10 +38,11 @@ export function mcuser(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '仅你可见',
+        'pt-BR': 'Apenas você pode ver',
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',
-        'pt-BR': 'Apenas você pode ver',
+        'pt-BR': 'Verdadeiro significa que a mensagem só pode ser vista por você, Falso significa que ela será enviada para o canal e todos podem vê-la',
       },
     },
   })

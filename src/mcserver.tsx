@@ -15,6 +15,7 @@ export function mcserver(): CommandHandler<Env> {
   useDescription('Search a Minecraft Server')
   useDescriptionLocalizations({
     'zh-CN': '检索一个MC服务器的信息',
+    'pt-BR': 'Pesquise um servidor Minecraft',
   })
 
   const ip = useString(
@@ -41,10 +42,11 @@ export function mcserver(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '仅你可见',
+        'pt-BR': 'Apenas você pode ver',
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',
-        'pt-BR': 'Apenas você pode ver',
+        'pt-BR': 'Verdadeiro significa que a mensagem só pode ser vista por você, Falso significa que ela será enviada para o canal e todos podem vê-la',
       },
     },
   })

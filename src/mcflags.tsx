@@ -14,6 +14,7 @@ export function mcflags(): CommandHandler<Env> {
   useDescription('Generate server or client startup flags')
   useNameLocalizations({
     'zh-CN': '生成服务器或者客户端的启动参数',
+    'pt-BR': 'Gere as bandeiras de inicialização do servidor ou do cliente',
   })
 
   const flag = useNumber('flag', 'Choose flag that you want to use', {
@@ -33,6 +34,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '参数类型',
+        'pt-BR': 'Tipo de bandeira',
       },
       description: {
         'zh-CN': '选择想用的参数',
@@ -47,6 +49,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '内存分配',
+        'pt-BR': 'Memória alocada',
       },
       description: {
         'zh-CN': '要分配的内存大小(GB)',
@@ -78,6 +81,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '要启动的目标名称',
+        'pt-BR': 'Nome do arquivo Jar a ser iniciado',
       },
       description: {
         'zh-CN': 'Jar 文件名称，默认为 server.jar',
@@ -93,6 +97,7 @@ export function mcflags(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '是否自动重启',
+          'pt-BR': 'Reiniciar automaticamente ou não (Padrão: verdadeiro)',
         },
       },
     }
@@ -102,6 +107,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '是否使用gui',
+        'pt-BR': 'Use a GUI do console (Padrão: falso)',
       },
     },
   })
@@ -109,6 +115,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '仅你可见',
+        'pt-BR': 'Apenas você pode ver',
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',
