@@ -26,7 +26,7 @@ export function mcserver(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '服务器地址',
-          'pt-BR': 'IP',
+          'pt-BR': 'ip',
         },
         description: {
           'zh-CN': '用于搜索的服务器地址，默认端口25565，可 : 指派端口',
