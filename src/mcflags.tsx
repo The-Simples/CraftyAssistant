@@ -14,7 +14,6 @@ export function mcflags(): CommandHandler<Env> {
   useDescription('Generate server or client startup flags')
   useNameLocalizations({
     'zh-CN': '生成服务器或者客户端的启动参数',
-    'pt-BR': 'Gere as bandeiras de inicialização do servidor ou do cliente',
   })
 
   const flag = useNumber('flag', 'Choose flag that you want to use', {
