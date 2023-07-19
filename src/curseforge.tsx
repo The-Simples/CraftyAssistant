@@ -16,6 +16,7 @@ export function curseforge(): CommandHandler<Env> {
   useDescription('Search Minecraft projects on CurseForge')
   useDescriptionLocalizations({
     'zh-CN': '搜索 CurseForge 项目',
+    'pt-BR': 'Pesquise projetos Minecraft no CurseForge',
   })
 
   const query = useString('query', 'The word used for searching', {
@@ -23,6 +24,7 @@ export function curseforge(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索关键词',
+        'pt-BR': 'palavra',
       },
       description: {
         'zh-CN': '用于搜索的词语',
@@ -41,6 +43,7 @@ export function curseforge(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索类型',
+        'pt-BR': 'tipo',
       },
       description: {
         'zh-CN': '指定搜索的类型',
@@ -60,6 +63,7 @@ export function curseforge(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '限定模组平台',
+        'pt-BR': 'modloader',
       },
     },
   })

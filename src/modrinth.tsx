@@ -23,6 +23,7 @@ export function modrinth(): CommandHandler<Env> {
   useDescription('Search projects on Modrinth')
   useDescriptionLocalizations({
     'zh-CN': '搜索 Modrinth 项目',
+    'pt-BR': 'Pesquise projetos no Modrinth',
   })
 
   const query = useString('query', 'Search key word', {
@@ -30,6 +31,7 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索关键词',
+        'pt-BR': 'palavra',
       },
       description: {
         'zh-CN': '用于搜索的词语',
@@ -49,6 +51,7 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索类型',
+        'pt-BR': 'tipo',
       },
       description: {
         'zh-CN': '指定搜索的类型',
@@ -68,6 +71,7 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '限定模组平台',
+        'pt-BR': 'modloader',
       },
       description: {
         'zh-CN': '限定搜索返回的模组平台',
@@ -104,6 +108,7 @@ export function modrinth(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '筛选光影或插件类型',
+          'pt-BR': 'tipo',
         },
         description: {
           'zh-CN': '只在指定搜索类型以后才允许使用',
@@ -144,7 +149,7 @@ export function modrinth(): CommandHandler<Env> {
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',
-        'pt-BR': 'Apenas você pode ver',
+        'pt-BR': 'Verdadeiro significa que a mensagem só pode ser vista por você, falso significa que a mensagem será enviada para o canal e todos podem ver',
       },
     },
   })

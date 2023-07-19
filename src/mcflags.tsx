@@ -33,6 +33,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '参数类型',
+        'pt-BR': 'tipo',
       },
       description: {
         'zh-CN': '选择想用的参数',
@@ -47,6 +48,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '内存分配',
+        'pt-BR': 'memória',
       },
       description: {
         'zh-CN': '要分配的内存大小(GB)',
@@ -78,6 +80,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '要启动的目标名称',
+        'pt-BR': 'jar',
       },
       description: {
         'zh-CN': 'Jar 文件名称，默认为 server.jar',
@@ -93,6 +96,7 @@ export function mcflags(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '是否自动重启',
+          'pt-BR': 'autoreiniciar',
         },
       },
     }
@@ -102,6 +106,7 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '是否使用gui',
+        'pt-BR': 'gui',
       },
     },
   })
