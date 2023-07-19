@@ -23,7 +23,7 @@ export function mcuser(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索正版账号',
-        'pt-BR': 'utilizador',
+        'pt-BR': 'conta',
       },
       description: {
         'zh-CN': '用于搜索的词语',
