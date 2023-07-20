@@ -19,7 +19,6 @@ export function spark(): CommandHandler<Env> {
       },
       description: {
         'zh-CN': '提供 Spark 报告 URL',
-        'en-US': 'Provide Spark Report URL',
         'pt-BR': 'Forneça o URL do Relatório Spark',
       },
     },
@@ -29,7 +28,7 @@ export function spark(): CommandHandler<Env> {
     'locales',
     'Use localization for Output(Default: Client Setting)',
     {
-      choices: ['en-US', 'zh-CN'],
+      choices: ['en-US', 'zh-CN', 'pt-BR'],
     }
   )
 
@@ -40,7 +39,6 @@ export function spark(): CommandHandler<Env> {
       },
       description: {
         'zh-CN': '使扫描结果人人可见。',
-        'en-US': 'Make anaylize result public.',
         'pt-BR': 'Tornar o resultado da análise público.',
       },
     },
@@ -50,7 +48,7 @@ export function spark(): CommandHandler<Env> {
     if (!url.startsWith('https://spark'))
       return <Message ephemeral>Not a spark url.</Message>
     const response_raw = await fetch(url + '?raw=1')
-    const sampler: any = await response_raw.json()
+    const sampler: any = await response_raw.json().catch(() => undefined)
     if (!sampler) return <Message ephemeral>Failed to get data</Message>
     const fields: { name: string; value: string; inline: boolean }[] = []
 
