@@ -79,12 +79,12 @@ arrow-despawn-rate:
   value: "Decrease this in spigot.yml.\nRecommended: 300."
 merge-radius.item:
 - expressions:
-  - parseFloat(spigot["world-settings"]["default"]["merge-radius"]["item"]) <= 2.5
+  - spigot["world-settings"]["default"]["merge-radius"]["item"] <= 2.5
   prefix: "❌"
   value: "Increase this in spigot.yml.\nRecommended: 4.0."
 merge-radius.exp:
 - expressions:
-  - parseFloat(spigot["world-settings"]["default"]["merge-radius"]["exp"]) <= 3.0
+  - spigot["world-settings"]["default"]["merge-radius"]["exp"] <= 3.0
   prefix: "❌"
   value: "Increase this in spigot.yml.\nRecommended: 6.0."
 max-entity-collisions:
