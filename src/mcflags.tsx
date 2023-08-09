@@ -80,7 +80,6 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '要启动的目标名称',
-        'pt-BR': 'jar',
       },
       description: {
         'zh-CN': 'Jar 文件名称，默认为 server.jar',
@@ -106,7 +105,6 @@ export function mcflags(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '是否使用gui',
-        'pt-BR': 'gui',
       },
     },
   })

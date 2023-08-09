@@ -51,7 +51,6 @@ export function modrinth(): CommandHandler<Env> {
     localizations: {
       name: {
         'zh-CN': '搜索类型',
-        'pt-BR': 'tipo',
       },
       description: {
         'zh-CN': '指定搜索的类型',
@@ -149,7 +148,7 @@ export function modrinth(): CommandHandler<Env> {
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',
-        'pt-BR': 'Verdadeiro significa que a mensagem só pode ser vista por você, falso significa que a mensagem será enviada para o canal e todos podem ver',
+        'pt-BR': '"True" só você vê a mensagem. "False" todos no canal veem.',
       },
     },
   })

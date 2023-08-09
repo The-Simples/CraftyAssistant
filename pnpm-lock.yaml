@@ -43,11 +43,11 @@ devDependencies:
 
 packages:
 
-  /@babel/runtime@7.22.5:
-    resolution: {integrity: sha512-ecjvYlnAaZ/KVneE/OdKYBYfgXV3Ptu6zQWmgEF7vwKhQnvVS6bjMD2XYgj+SNvQ1GfK/pjgokfPkC/2CO8CuA==}
+  /@babel/runtime@7.22.10:
+    resolution: {integrity: sha512-21t/fkKLMZI4pqP2wlmsQAWnYW1PDyKyyUV4vCi+B25ydmdaYTKXPwCj0BzSUnZf4seIiYvSA3jcZ3gdsMFkLQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.11
+      regenerator-runtime: 0.14.0
     dev: false
 
   /@cloudflare/kv-asset-handler@0.2.0:
@@ -635,15 +635,15 @@ packages:
   /@types/better-sqlite3@7.6.4:
     resolution: {integrity: sha512-dzrRZCYPXIXfSR1/surNbJ/grU3scTaygS0OMzjlGf71i9sc2fGyHPXXiXmEvNIoE0cGwsanEFMVJxPXmco9Eg==}
     dependencies:
-      '@types/node': 20.3.1
+      '@types/node': 20.4.9
     dev: true
 
   /@types/jexl@2.3.1:
     resolution: {integrity: sha512-D7htNp+ka5xdEfHeAQaukzXeDt9SMdHP55WFI0gT7iR7W+3FB4PrzUtuYklgpKdutGqc31UAjh65eHLUsIZyNA==}
     dev: false
 
-  /@types/node@20.3.1:
-    resolution: {integrity: sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==}
+  /@types/node@20.4.9:
+    resolution: {integrity: sha512-8e2HYcg7ohnTUbHk8focoklEQYvemQmu9M/f43DZVx43kHn0tE3BY/6gSDxS7k0SprtS0NHvj+L80cGLnoOUcQ==}
     dev: true
 
   /@types/stack-trace@0.0.29:
@@ -654,14 +654,14 @@ packages:
     resolution: {integrity: sha512-UyvoIPg0ZFMYIg5c/lvhg44XbijLHzsc5hSKSFKEBoH6r+oMUeeotPWAv1iSUTl3tUZ8cUJX1rNI0iDHxP1Efw==}
     engines: {node: '>=16.4'}
     dependencies:
-      undici: 5.22.1
+      undici: 5.23.0
     dev: false
 
   /@xmcl/modrinth@2.1.0:
     resolution: {integrity: sha512-AjKk8hibvcoy+0al6t5MogBAde0hv5TEV0qNcFyDjNR5sx2UKUjBMnLxSXFETNWs31pGAULRnhrSAxf8J/5QiA==}
     engines: {node: '>=16.4'}
     dependencies:
-      undici: 5.22.1
+      undici: 5.23.0
     dev: false
 
   /anymatch@3.1.3:
@@ -695,7 +695,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.5.2
+      semver: 7.5.4
     dev: true
 
   /busboy@1.6.0:
@@ -737,8 +737,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /discord-api-types@0.37.47:
-    resolution: {integrity: sha512-rNif8IAv6duS2z47BMXq/V9kkrLfkAoiwpFY3sLxxbyKprk065zqf3HLTg4bEoxRSmi+Lhc7yqGDrG8C3j8GFA==}
+  /discord-api-types@0.37.52:
+    resolution: {integrity: sha512-TP99aMgY6rHuDIy056GDm1j2nGOcaLbFpjVbvAmv6N6vhkjHNqHXCHVqKtGisaQ8D15slbxTHNl/SSkPdx2syg==}
     dev: false
 
   /dotenv@10.0.0:
@@ -1085,7 +1085,7 @@ packages:
   /jexl@2.3.0:
     resolution: {integrity: sha512-ecqln4kTWNkMwbFvTukOMDq1jy1GcPzvshhMp/s4pxU86xdLDq7HbDRa87DfMfbSAOS8V6EwvCdfs0S+w/iycA==}
     dependencies:
-      '@babel/runtime': 7.22.5
+      '@babel/runtime': 7.22.10
     dev: false
 
   /kleur@4.1.5:
@@ -1238,7 +1238,7 @@ packages:
     dependencies:
       execa: 6.1.0
       parse-package-name: 1.0.0
-      semver: 7.5.2
+      semver: 7.5.4
       validate-npm-package-name: 4.0.0
     dev: true
 
@@ -1285,8 +1285,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /regenerator-runtime@0.13.11:
-    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
+  /regenerator-runtime@0.14.0:
+    resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
     dev: false
 
   /rollup-plugin-inject@3.0.2:
@@ -1322,8 +1322,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /semver@7.5.2:
-    resolution: {integrity: sha512-SoftuTROv/cRjCze/scjGyiDtcUyxw1rgYQSZY7XTmtR5hX+dm76iDbTH8TkLPHCQmlbQVSSbNZCPM2hb0knnQ==}
+  /semver@7.5.4:
+    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -1353,7 +1353,7 @@ packages:
   /slshx-modified@0.3.0:
     resolution: {integrity: sha512-OTr4S3fOxiZmNux1XxJGebCtEYZkFT9FAuvJTztgQrJMtLBd3sU3yBy5gwKWMGINOMCDGpR9oP1HJdrwCa6Hdg==}
     dependencies:
-      discord-api-types: 0.37.47
+      discord-api-types: 0.37.52
       tweetnacl: 1.0.3
     dev: false
 
@@ -1410,8 +1410,8 @@ packages:
       busboy: 1.6.0
     dev: true
 
-  /undici@5.22.1:
-    resolution: {integrity: sha512-Ji2IJhFXZY0x/0tVBXeQwgPlLWw13GVzpsWPQ3rV50IFMMof2I55PZZxtm4P6iNq+L5znYN9nSTAq0ZyE6lSJw==}
+  /undici@5.23.0:
+    resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}
     engines: {node: '>=14.0'}
     dependencies:
       busboy: 1.6.0
