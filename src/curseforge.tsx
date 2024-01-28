@@ -101,7 +101,7 @@ export function curseforge(): CommandHandler<Env> {
           'zh-CN': '限制搜索的返回数',
           'pt-BR': 'Limite o número de retornos para a pesquisa',
         },
-      },
+      }
     }
   )
   const silent = useBoolean('silent', 'Message can(not) be viewed by others', {
@@ -121,39 +121,44 @@ export function curseforge(): CommandHandler<Env> {
     const searchOptions: SearchOptions = {
       classId: 6,
       searchFilter: query,
-      pageSize: 2,
+      pageSize: limit || 5,
     }
     if (types) searchOptions['classId'] = types
     if (version) searchOptions.gameVersion = version
-    if (limit) searchOptions.pageSize = limit
     if (loaders) searchOptions.modLoaderType = loaders
     const result = await api.searchMods(searchOptions)
     const mods: Mod[] = result.data // mod details
     if (mods.length == 0)
       return <Message ephemeral>Can not find any results.</Message>
-    let message: { embeds: any[] } = {
-      ...(silent ? { flags: 64 } : null), // ephemeral
-      embeds: [],
-    }
-    for (const project of mods) {
-      message.embeds.push({
-        // All these properties are optional
-        title: project.name,
-        description: project.summary,
-        url: `https://legacy.curseforge.com/projects/${project.id}`,
-        timestamp: new Date().toISOString(),
-        color: 0x0094ff,
-        thumbnail: { url: project.logo.thumbnailUrl },
-        fields: [
-          {
-            name: 'Categories',
-            value: project.categories.values(),
-            inline: true,
-          },
-        ],
-      })
-    }
 
-    return message
+      let message: { embeds: any[] } = {
+          ...(silent ? { flags: 64 } : {}), // ephemeral
+          embeds: [],
+      }
+      for (const project of mods) {
+          message.embeds.push({
+              // All these properties are optional
+              title: project.name,
+              description: project.summary,
+              url: `https://legacy.curseforge.com/projects/${project.id}`,
+              timestamp: project.dateReleased,
+              color: 0x0094ff,
+              thumbnail: { url: project.logo.url },
+              fields: [
+                  {
+                      name: 'Categories',
+                      value: project.categories.map(e =>e.name).join(', '),
+                      inline: true,
+                  },
+                  {
+                      name: 'Downloads',
+                      value: project.downloadCount,
+                      inline: true,
+                  }
+              ],
+          })
+      }
+
+      return message
   }
 }

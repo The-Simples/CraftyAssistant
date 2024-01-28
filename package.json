@@ -10,18 +10,18 @@
     "update-kv": "node scripts/update-kv.js"
   },
   "dependencies": {
-    "@types/jexl": "^2.3.1",
-    "@xmcl/curseforge": "^2.0.3",
-    "@xmcl/modrinth": "^2.1.0",
+    "@types/jexl": "^2.3.4",
+    "@xmcl/curseforge": "^2.1.1",
+    "@xmcl/modrinth": "^2.3.1",
     "jexl": "^2.3.0",
     "slshx": "npm:slshx-modified@^0.3.0",
-    "yaml": "^2.3.1"
+    "yaml": "^2.3.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.19.0",
     "esbuild": "^0.14.54",
-    "miniflare": "^2.14.0",
+    "miniflare": "^2.14.2",
     "prettier": "^2.8.8",
-    "wrangler": "^2.20.0"
+    "wrangler": "^2.21.0"
   }
 }

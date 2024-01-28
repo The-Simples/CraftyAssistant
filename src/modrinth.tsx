@@ -184,16 +184,21 @@ export function modrinth(): CommandHandler<Env> {
         title: project.title,
         description: project.description,
         url: `https://modrinth.com/project/${project.project_id}`,
-        timestamp: new Date().toISOString(),
+        timestamp: project.date_modified,
         color: 0x0094ff,
         thumbnail: { url: project.icon_url },
         fields: [
-          { name: 'Version', value: project.versions.toString(), inline: true },
-          {
-            name: 'Categories',
-            value: project.categories.toString(),
-            inline: true,
-          },
+            { name: 'Version', value: project.versions.toString(), inline: true },
+            {
+                name: 'Categories',
+                value: project.categories.toString(),
+                inline: true,
+            },
+            {
+                name: 'Downloads',
+                value: project.downloads,
+                inline: true,
+            },
         ],
       })
     }
