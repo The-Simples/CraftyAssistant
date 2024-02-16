@@ -13,7 +13,7 @@
 
 ## CraftyAssistant
 Check the features [here](https://crafty-assistant.vercel.app/guide)
-- Search Modrinth/~~CurseForge~~(API requried, but I don't have one) projects
+- Search Modrinth/CurseForge projects (Support versions/loaders/type filter)
 - Server query
 - [Spark](https://github.com/lucko/spark) Analyser
 - Search Minecraft user
