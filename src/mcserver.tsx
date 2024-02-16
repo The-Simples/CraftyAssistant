@@ -26,7 +26,6 @@ export function mcserver(): CommandHandler<Env> {
       localizations: {
         name: {
           'zh-CN': '服务器地址',
-          'pt-BR': 'ip',
         },
         description: {
           'zh-CN': '用于搜索的服务器地址，默认端口25565，可 : 指派端口',
@@ -35,7 +34,7 @@ export function mcserver(): CommandHandler<Env> {
         },
       },
       minLength: 2,
-      maxLength: 20,
+      maxLength: 30,
     }
   )
 
@@ -46,7 +45,7 @@ export function mcserver(): CommandHandler<Env> {
       },
       description: {
         'zh-CN': 'True 代表消息仅对你可见，False 代表发送到频道，每人可见',
-        'pt-BR': 'Verdadeiro significa que a mensagem só pode ser vista por você, Falso significa que ela será enviada para o canal e todos podem vê-la',
+        'pt-BR': '"True" só você vê a mensagem. "False" todos no canal veem.',
       },
     },
   })

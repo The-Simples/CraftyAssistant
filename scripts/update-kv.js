@@ -14,15 +14,15 @@ writeConf().catch((e) => console.log(e))
 async function writeConf() {
   const files = {
     plugins: {
-      paper: './analysis_config/plugins/paper.yml',
-      purpur: './analysis_config/plugins/purpur.yml',
+      paper: './scripts/analysis_config/plugins/paper.yml',
+      purpur: './scripts/analysis_config/plugins/purpur.yml',
     },
     config: {
-      server_properties: './analysis_config/server.properties.yml',
-      bukkit: './analysis_config/bukkit.yml',
-      spigot: './analysis_config/spigot.yml',
-      paper: './analysis_config/paper.yml',
-      purpur: './analysis_config/purpur.yml',
+      server_properties: './scripts/analysis_config/server.properties.yml',
+      bukkit: './scripts/analysis_config/bukkit.yml',
+      spigot: './scripts/analysis_config/spigot.yml',
+      paper: './scripts/analysis_config/paper.yml',
+      purpur: './scripts/analysis_config/purpur.yml',
     },
   }
   fetch('https://api.modrinth.com/v2/tag/game_version').then(async (res) => {
